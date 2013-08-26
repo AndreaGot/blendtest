@@ -22,6 +22,11 @@ namespace BlendTest
             //BuildLocalizedApplicationBar();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Storyboard1.Begin();
+        }
+
         // Codice di esempio per la realizzazione di una ApplicationBar localizzata
         //private void BuildLocalizedApplicationBar()
         //{

@@ -12,6 +12,26 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
+	<phone:PhoneApplicationPage.Resources>
+		<Storyboard x:Name="Storyboard1">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="rectangle">
+				<EasingDoubleKeyFrame KeyTime="0" Value="8.955"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-64.179"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="110.448"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="8.955"/>
+			</DoubleAnimationUsingKeyFrames>
+			<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" Storyboard.TargetName="rectangle">
+				<EasingPointKeyFrame KeyTime="0" Value="0.5,0.5"/>
+				<EasingPointKeyFrame KeyTime="0:0:0.9" Value="0.431,0.529"/>
+			</PointAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="rectangle">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="182.09"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="176.12"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="1.493"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot è la griglia radice in cui viene inserito tutto il contenuto della pagina-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -47,6 +67,12 @@
 
         <!--ContentPanel - inserire ulteriore contenuto qui-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        	<Button Content="Start" HorizontalAlignment="Left" Height="100" Margin="95,74,0,0" VerticalAlignment="Top" Width="269" Click="Button_Click"/>
+        	<Rectangle x:Name="rectangle" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="53" Margin="95,273,0,0" Stroke="Black" VerticalAlignment="Top" Width="53" RenderTransformOrigin="0.5,0.5">
+        		<Rectangle.RenderTransform>
+        			<CompositeTransform/>
+        		</Rectangle.RenderTransform>
+        	</Rectangle>
 
         </Grid>
 
